@@ -1,0 +1,12 @@
+version: '3'
+services:
+  express-project:
+    # ：指定容器名称 funny-app
+    container_name: 'express-project'  
+    # ：指定构建镜像上下文路径，依据 ./Dockerfile 构建镜像
+    build: .   
+    # ：指定容器运行的镜像，名称设置为 funny-node:2.0
+    image: 'express-project'  
+    # ：映射端口的标签，格式为 '宿主机端口:容器端口' ：这里 node 项目监听3000端口，映射到宿主机3000端口
+    ports:           
+      - '80:3000'  
